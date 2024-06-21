@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "3deadb36-2abd-4008-9ec5-8329cd9c66d2",
+		"name": "OfferCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36476649"
+	},
+	"item": [
+		{
+			"name": "createOffer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerId\": 1,\r\n    \"brandId\": 1,\r\n    \"startDate\": \"2020-06-14T00:00:00Z\",\r\n    \"endDate\": \"2020-12-31T23:59:59Z\",\r\n    \"priceListId\": 5,\r\n    \"productPartnumber\": \"000100444\",\r\n    \"priority\": 0,\r\n    \"price\": 40,\r\n    \"currencyIso\": \"EUR\",\r\n    \"size\": \"00\",\r\n    \"model\": \"0100\",\r\n    \"quality\": \"444\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/offer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"offer"
+					]
+				},
+				"description": "Crea una nueva oferta en la tienda de ropa\nRespuesta Exitosa: Retorna la oferta creada.\nRespuesta de Error: Retorna un mensaje de error con el código de estado HTTP correspondiente en caso de fallo."
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOffers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/offer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"offer"
+					]
+				},
+				"description": "Obtiene todas las ofertas existentes.\n\nEndpoint: GET http://localhost:8080/offer  \n  \nRespuesta Exitosa: Retorna una lista con todas las ofertas disponibles.  \nRespuesta de Error: Retorna un mensaje de error con el código de estado HTTP correspondiente si hay algún problema en el servidor."
+			},
+			"response": []
+		},
+		{
+			"name": "getOfferById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "Obtiene los detalles de una oferta según su ID.\n\nEndpoint: GET [http://localhost:8080](http://localhost:8080/offer)/offer/{id}  \nParámetros de Ruta: {id} - ID numérico de la oferta.  \nRespuesta Exitosa: Retorna los detalles de la oferta encontrada.  \nRespuesta de Error: Retorna un mensaje de error con el código de estado HTTP correspondiente si la oferta no se encuentra o si hay algún problema en el servidor."
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllOffers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/offer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"offer"
+					]
+				},
+				"description": "Elimina todas las ofertas existentes.\n\nEndpoint: DELETE [http://localhost:8080](http://localhost:8080/offer)/offer  \nRespuesta Exitosa: Retorna un mensaje indicando que todas las ofertas fueron eliminadas correctamente.  \nRespuesta de Error: Retorna un mensaje de error con el código de estado HTTP correspondiente si hay algún problema en el servidor."
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOfferById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "Elimina una oferta existente según su ID.\n\nEndpoint: DELETE [http://localhost:8080](http://localhost:8080/offer)/offer/{id}  \nParámetros de Ruta: {id} - ID numérico de la oferta.  \nRespuesta Exitosa: Retorna un mensaje indicando que la oferta fue eliminada correctamente.  \nRespuesta de Error: Retorna un mensaje de error con el código de estado HTTP correspondiente si la oferta no se encuentra o si hay algún problema en el servidor."
+			},
+			"response": []
+		}
+	]
+}
